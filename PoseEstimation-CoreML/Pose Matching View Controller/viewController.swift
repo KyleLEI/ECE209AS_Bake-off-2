@@ -18,11 +18,11 @@ class ViewController: UIViewController,StreamDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    func page_up(_ sender: Any) {
+    func page_up() {
         print("page up")
         outputStream?.write("u",maxLength: 1)
     }
-    func page_down(_ sender: Any) {
+    func page_down() {
         print("page down")
         outputStream?.write("d",maxLength: 1)
     }

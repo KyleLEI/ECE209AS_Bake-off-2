@@ -22,6 +22,7 @@ class PoseMatchingViewController: UIViewController, StreamDelegate {
     
     var capturedIndex = 0
     var matchCounter = 0
+    var lastMatch = -1
     // MARK: - AV Property
     var videoCapture: VideoCapture!
     
@@ -257,15 +258,32 @@ extension PoseMatchingViewController {
                     topCapturedJointBGView = capturedJointBGView
                 }
             }
+            print(matchIndex)
+         
             if matchIndex != -1{
-                matchCounter = matchCounter + 1
-            }else{
-                matchCounter = 0
+                print(matchIndex)
+                if matchCounter == 0{
+                    if matchIndex == 0 || matchIndex == 2{
+                        matchCounter = 1
+                        lastMatch = matchIndex
+                        print(matchIndex)
+                    }
+                }
+                if matchCounter == 1{
+                    if lastMatch==0 && matchIndex == 1{
+                        ViewController().page_up()
+                       print("page up")
+                    }
+                    if lastMatch==2 && matchIndex == 3{
+                        ViewController().page_down()
+                       print("page down")
+                    }
+                    
+                    lastMatch = -1
+                    matchCounter = 0
+                }
             }
-            
-            if matchCounter == 2{
-                
-            }
+
             
             topCapturedJointBGView?.backgroundColor = UIColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 0.4)
 //            print(matchingRatios)

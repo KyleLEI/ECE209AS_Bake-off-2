@@ -21,7 +21,6 @@
 		557F532820ED25B000CFCCD7 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F532520ED25AF00CFCCD7 /* Measure.swift */; };
 		55AAFB1C21128863000B21A3 /* HeatmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AAFB1B21128863000B21A3 /* HeatmapViewController.swift */; };
 		55AAFB1E21128AB6000B21A3 /* DrawingHeatmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AAFB1D21128AB6000B21A3 /* DrawingHeatmapView.swift */; };
-		67CC839D23961B4A00720C99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC839C23961B4A00720C99 /* SceneDelegate.swift */; };
 		67CC839F23961BD400720C99 /* viewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC839E23961BD400720C99 /* viewController.swift */; };
 		714087F32302E7AC00F7EDF4 /* PoseMatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714087F22302E7AC00F7EDF4 /* PoseMatchingViewController.swift */; };
 		714D590F2377F87A00BBE1DC /* HeatmapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714D590E2377F87A00BBE1DC /* HeatmapsViewController.swift */; };
@@ -62,7 +61,6 @@
 		557F532520ED25AF00CFCCD7 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		55AAFB1B21128863000B21A3 /* HeatmapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapViewController.swift; sourceTree = "<group>"; };
 		55AAFB1D21128AB6000B21A3 /* DrawingHeatmapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingHeatmapView.swift; sourceTree = "<group>"; };
-		67CC839C23961B4A00720C99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		67CC839E23961BD400720C99 /* viewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewController.swift; sourceTree = "<group>"; };
 		714087F22302E7AC00F7EDF4 /* PoseMatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseMatchingViewController.swift; sourceTree = "<group>"; };
 		714D590E2377F87A00BBE1DC /* HeatmapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapsViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				714087F22302E7AC00F7EDF4 /* PoseMatchingViewController.swift */,
-				67CC839C23961B4A00720C99 /* SceneDelegate.swift */,
 				67CC839E23961BD400720C99 /* viewController.swift */,
 			);
 			path = "Pose Matching View Controller";
@@ -309,7 +306,6 @@
 				7165F7592271772A0010F164 /* StillImageHeatmapViewController.swift in Sources */,
 				55AAFB1E21128AB6000B21A3 /* DrawingHeatmapView.swift in Sources */,
 				71F1455422F1C890000ED787 /* model_hourglass.mlmodel in Sources */,
-				67CC839D23961B4A00720C99 /* SceneDelegate.swift in Sources */,
 				557F532720ED25B000CFCCD7 /* VideoCapture.swift in Sources */,
 				555B477421F61234009026AB /* DrawingJointView.swift in Sources */,
 				714D590F2377F87A00BBE1DC /* HeatmapsViewController.swift in Sources */,
@@ -517,14 +513,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = 26R26G69C8;
 				INFOPLIST_FILE = "PoseEstimation-CoreML/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.PoseEstimation-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = poseCtrl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,14 +532,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WXJ4Z4H69;
+				DEVELOPMENT_TEAM = 26R26G69C8;
 				INFOPLIST_FILE = "PoseEstimation-CoreML/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tucan9389.PoseEstimation-CoreML";
+				PRODUCT_BUNDLE_IDENTIFIER = poseCtrl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

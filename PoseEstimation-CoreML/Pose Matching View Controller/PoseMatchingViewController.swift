@@ -149,8 +149,8 @@ class PoseMatchingViewController: UIViewController, StreamDelegate {
     }
     
     @IBOutlet weak var addr_input: UITextField!
-    @IBOutlet weak var page_up_button: UIButton!
-    @IBOutlet weak var page_down_button: UIButton!
+//    @IBOutlet weak var page_up_button: UIButton!
+//    @IBOutlet weak var page_down_button: UIButton!
     
     func page_up(_ sender: Any) {
             print("page up")
@@ -180,11 +180,11 @@ class PoseMatchingViewController: UIViewController, StreamDelegate {
         func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
             if (eventCode == Stream.Event.hasSpaceAvailable) {
                 print("Server connected")
-                page_down_button.isEnabled = true
-                page_up_button.isEnabled = true
+//                page_down_button.isEnabled = true
+//                page_up_button.isEnabled = true
             }else{
-                page_up_button.isEnabled = false
-                page_down_button.isEnabled = false
+//                page_up_button.isEnabled = false
+//                page_down_button.isEnabled = false
             }
         }
 }
@@ -217,7 +217,7 @@ extension PoseMatchingViewController {
         /* ========================= post-processing ========================= */
         
         /* ------------------ convert heatmap to point array ----------------- */
-        var predictedPoints = postProcessor.convertToPredictedPoints(from: heatmaps, isFlipped: true)
+        var predictedPoints = postProcessor.convertToPredictedPoints(from: heatmaps, isFlipped: false)
         
         /* --------------------- moving average filter ----------------------- */
         if predictedPoints.count != mvfilters.count {

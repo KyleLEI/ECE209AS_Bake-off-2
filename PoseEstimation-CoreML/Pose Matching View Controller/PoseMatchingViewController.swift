@@ -104,7 +104,7 @@ class PoseMatchingViewController: UIViewController {
         videoCapture = VideoCapture()
         videoCapture.delegate = self
         videoCapture.fps = 30
-        videoCapture.setUp(sessionPreset: .vga640x480, cameraPosition: .front) { success in
+        videoCapture.setUp(sessionPreset: .vga640x480, cameraPosition: .back) { success in
             
             if success {
                 // add preview view on the layer

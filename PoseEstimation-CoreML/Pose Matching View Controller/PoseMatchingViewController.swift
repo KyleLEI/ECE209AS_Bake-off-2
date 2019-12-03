@@ -153,11 +153,11 @@ class PoseMatchingViewController: UIViewController, StreamDelegate {
 //    @IBOutlet weak var page_up_button: UIButton!
 //    @IBOutlet weak var page_down_button: UIButton!
     
-    func page_up(_ sender: Any) {
+    func page_up() {
             print("page up")
             outputStream?.write("u",maxLength: 1)
         }
-        func page_down(_ sender: Any) {
+    func page_down() {
             print("page down")
             outputStream?.write("d",maxLength: 1)
         }
@@ -259,6 +259,7 @@ extension PoseMatchingViewController {
                 }
             }
             print(matchIndex)
+            
          
             if matchIndex != -1{
                 print(matchIndex)
@@ -270,17 +271,29 @@ extension PoseMatchingViewController {
                     }
                 }
                 if matchCounter == 1{
-                    if lastMatch==0 && matchIndex == 1{
-                        ViewController().page_up()
-                       print("page up")
-                    }
-                    if lastMatch==2 && matchIndex == 3{
-                        ViewController().page_down()
-                       print("page down")
+                    if lastMatch==0{
+                        if matchIndex != 0{
+                            if matchIndex == 1{
+                            page_up()
+                            print("page up")
+                            }
+                            lastMatch = -1
+                            matchCounter = 0
+                        }
+                    }else if lastMatch==2 {
+                        if matchIndex != 2{
+                            if matchIndex == 3{
+                            page_down()
+                            print("page down")
+                            }
+                            lastMatch = -1
+                            matchCounter = 0
+                        }
+                    }else{
+                       lastMatch = -1
+                       matchCounter = 0
                     }
                     
-                    lastMatch = -1
-                    matchCounter = 0
                 }
             }
 

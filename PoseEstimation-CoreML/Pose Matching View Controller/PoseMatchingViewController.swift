@@ -21,7 +21,7 @@ class PoseMatchingViewController: UIViewController {
     var capturedPointsArray: [[CapturedPoint?]?] = []
     
     var capturedIndex = 0
-    
+    var matchCounter = 0
     // MARK: - AV Property
     var videoCapture: VideoCapture!
     
@@ -201,18 +201,32 @@ extension PoseMatchingViewController {
             guard let self = self else { return }
             // draw line
             self.jointView.bodyPoints = predictedPoints
-            
+            //let indexArray = [0,1,2,3]
             var topCapturedJointBGView: UIView?
             var maxMatchingRatio: CGFloat = 0
+            var matchIndex = -1;
+            var index  = -1;
             for (matchingRatio, (capturedJointBGView, capturedJointConfidenceLabel)) in zip(matchingRatios, zip(self.capturedJointBGViews, self.capturedJointConfidenceLabels)) {
+                index = index + 1
                 let text = String(format: "%.2f%", matchingRatio*100)
                 capturedJointConfidenceLabel.text = text
                 capturedJointBGView.backgroundColor = .clear
                 if matchingRatio > 0.80 && maxMatchingRatio < matchingRatio {
+                    matchIndex = index
                     maxMatchingRatio = matchingRatio
                     topCapturedJointBGView = capturedJointBGView
                 }
             }
+            if matchIndex != -1{
+                matchCounter = matchCounter + 1
+            }else{
+                matchCounter = 0
+            }
+            
+            if matchCounter == 2{
+                
+            }
+            
             topCapturedJointBGView?.backgroundColor = UIColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 0.4)
 //            print(matchingRatios)
         }
